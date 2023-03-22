@@ -19,12 +19,12 @@ model.compile(
 )
 
 print('Comenzar entrenamienot...')
-histories = model.fit(celsius, fahrenheit, epochs=1000, verbose=False)
+record = model.fit(celsius, fahrenheit, epochs=1000, verbose=False)
 print('Modelo entrenado!')
 
 plt.xlabel('# Epoca')
 plt.ylabel('# Magnitud de perdida')
-plt.plot(histories.history['loss'])
+plt.plot(record.history['loss'])
 
 print('Hagamos una prediccion')
 resul = model.predict([100.0])
